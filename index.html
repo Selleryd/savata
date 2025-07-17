@@ -506,6 +506,771 @@
                 </p>
             </div>
           
+<!-- Top Navigation -->
+    <nav class="glass-card border-b border-gray-700/30 px-6 py-4 sticky top-0 z-50">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <div class="flex items-center space-x-4">
+                    <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-brain text-white text-lg"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                            MonkFruit Pro
+                        </h1>
+                        <p class="text-xs text-gray-400">AI Production Intelligence</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <div class="w-2 h-2 bg-green-400 rounded-full status-indicator"></div>
+                    <span class="text-sm text-green-400 font-medium">Live Production</span>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-6">
+                <div class="flex items-center space-x-4">
+                    <div class="text-right">
+                        <div class="text-sm font-semibold text-white" id="currentTime">2:34:56 PM</div>
+                        <div class="text-xs text-gray-400">Production Time</div>
+                    </div>
+                    <div class="w-px h-8 bg-gray-700"></div>
+                    <button class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-indigo-700 hover:to-purple-700 transition-all flex items-center space-x-2">
+                        <i class="fas fa-download"></i>
+                        <span>Export Analytics</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex h-screen">
+        <!-- Enhanced Sidebar -->
+        <div class="w-72 sidebar">
+            <div class="p-6">
+                <!-- AI Status -->
+                <div class="glass-card rounded-xl p-4 mb-6">
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-robot text-white text-sm"></i>
+                        </div>
+                        <div>
+                            <div class="text-sm font-semibold text-white">AI Assistant</div>
+                            <div class="text-xs text-green-400">Active & Learning</div>
+                        </div>
+                    </div>
+                    <div class="text-xs text-gray-400">
+                        Optimizing production parameters in real-time
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="space-y-2">
+                    <div class="nav-item active px-4 py-3 rounded-lg text-sm font-medium flex items-center space-x-3">
+                        <i class="fas fa-chart-line w-4"></i>
+                        <span>Production Overview</span>
+                    </div>
+                    <div class="nav-item px-4 py-3 rounded-lg text-sm font-medium text-gray-300 flex items-center space-x-3">
+                        <i class="fas fa-industry w-4"></i>
+                        <span>Manufacturing</span>
+                    </div>
+                    <div class="nav-item px-4 py-3 rounded-lg text-sm font-medium text-gray-300 flex items-center space-x-3">
+                        <i class="fas fa-flask w-4"></i>
+                        <span>Quality Control</span>
+                    </div>
+                    <div class="nav-item px-4 py-3 rounded-lg text-sm font-medium text-gray-300 flex items-center space-x-3">
+                        <i class="fas fa-leaf w-4"></i>
+                        <span>Sustainability</span>
+                    </div>
+                    <div class="nav-item px-4 py-3 rounded-lg text-sm font-medium text-gray-300 flex items-center space-x-3">
+                        <i class="fas fa-bell w-4"></i>
+                        <span>Alerts & Insights</span>
+                    </div>
+                    <div class="nav-item px-4 py-3 rounded-lg text-sm font-medium text-gray-300 flex items-center space-x-3">
+                        <i class="fas fa-cog w-4"></i>
+                        <span>System Settings</span>
+                    </div>
+                </nav>
+            </div>
+            
+            <!-- Real-time Metrics -->
+            <div class="p-6 border-t border-gray-700/30">
+                <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Live Metrics</h3>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-clock text-indigo-400 text-xs"></i>
+                            <span class="text-sm text-gray-300">System Uptime</span>
+                        </div>
+                        <span class="text-sm font-semibold text-green-400">99.97%</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-weight text-purple-400 text-xs"></i>
+                            <span class="text-sm text-gray-300">Today's Output</span>
+                        </div>
+                        <span class="text-sm font-semibold text-white" id="todayOutput">127.4 kg</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-tachometer-alt text-cyan-400 text-xs"></i>
+                            <span class="text-sm text-gray-300">Efficiency</span>
+                        </div>
+                        <span class="text-sm font-semibold text-cyan-400" id="sidebarEfficiency">94.8%</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-cubes text-yellow-400 text-xs"></i>
+                            <span class="text-sm text-gray-300">Total Volume</span>
+                        </div>
+                        <span class="text-sm font-semibold text-yellow-400" id="sidebarVolume">58.4t</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 overflow-auto">
+            <div class="p-8">
+                <!-- Header Section -->
+                <div class="mb-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h2 class="text-3xl font-bold text-white mb-2">Production Intelligence Dashboard</h2>
+                            <p class="text-gray-400">AI-powered real-time monitoring and optimization of monk fruit processing</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <select id="dateRange" class="bg-gray-800 border border-gray-600 text-white rounded-lg px-4 py-2 text-sm">
+                                <option value="24h">Last 24 Hours</option>
+                                <option value="7d">Last 7 Days</option>
+                                <option value="30d">Last 30 Days</option>
+                                <option value="90d">Last 90 Days</option>
+                            </select>
+                            <button class="glass-card px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white transition-colors flex items-center space-x-2">
+                                <i class="fas fa-sync-alt"></i>
+                                <span>Refresh</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Performance Indicators -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                    <div class="metric-card rounded-xl p-6 has-tooltip relative">
+                        <div class="tooltip rounded-lg p-3 left-1/2 whitespace-nowrap">
+                            <div class="text-xs text-white">Current production rate vs target</div>
+                        </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-chart-line text-white text-lg"></i>
+                            </div>
+                            <div class="flex items-center space-x-1 text-xs">
+                                <i class="fas fa-arrow-up text-green-400"></i>
+                                <span class="text-green-400 font-semibold">+12.3%</span>
+                            </div>
+                        </div>
+                        <div class="text-3xl font-bold text-white mb-1" id="totalOutput">2.47</div>
+                        <div class="text-sm text-gray-400 mb-3">Tonnes per hour</div>
+                        <div class="w-full bg-gray-700 rounded-full h-1.5">
+                            <div class="bg-gradient-to-r from-green-500 to-emerald-400 h-1.5 rounded-full" style="width: 82%"></div>
+                        </div>
+                        <div class="text-xs text-gray-500 mt-2">Target: 3.0 t/h</div>
+                    </div>
+
+                    <div class="metric-card rounded-xl p-6 has-tooltip relative">
+                        <div class="tooltip rounded-lg p-3 left-1/2 whitespace-nowrap">
+                            <div class="text-xs text-white">Overall system efficiency rating</div>
+                        </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-tachometer-alt text-white text-lg"></i>
+                            </div>
+                            <div class="flex items-center space-x-1 text-xs">
+                                <i class="fas fa-check-circle text-indigo-400"></i>
+                                <span class="text-indigo-400 font-semibold">Optimal</span>
+                            </div>
+                        </div>
+                        <div class="text-3xl font-bold text-white mb-1" id="efficiency">94.8%</div>
+                        <div class="text-sm text-gray-400 mb-3">System efficiency</div>
+                        <div class="w-full bg-gray-700 rounded-full h-1.5">
+                            <div class="bg-gradient-to-r from-indigo-500 to-purple-400 h-1.5 rounded-full" style="width: 95%"></div>
+                        </div>
+                        <div class="text-xs text-gray-500 mt-2">Industry avg: 87%</div>
+                    </div>
+
+                    <div class="metric-card rounded-xl p-6 has-tooltip relative">
+                        <div class="tooltip rounded-lg p-3 left-1/2 whitespace-nowrap">
+                            <div class="text-xs text-white">Mogroside V concentration level</div>
+                        </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-award text-white text-lg"></i>
+                            </div>
+                            <div class="flex items-center space-x-1 text-xs">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span class="text-yellow-400 font-semibold">Premium</span>
+                            </div>
+                        </div>
+                        <div class="text-3xl font-bold text-white mb-1" id="quality">25.7%</div>
+                        <div class="text-sm text-gray-400 mb-3">Mogroside V content</div>
+                        <div class="w-full bg-gray-700 rounded-full h-1.5">
+                            <div class="bg-gradient-to-r from-yellow-500 to-orange-400 h-1.5 rounded-full" style="width: 86%"></div>
+                        </div>
+                        <div class="text-xs text-gray-500 mt-2">Grade A+ quality</div>
+                    </div>
+
+                    <div class="metric-card rounded-xl p-6 has-tooltip relative">
+                        <div class="tooltip rounded-lg p-3 left-1/2 whitespace-nowrap">
+                            <div class="text-xs text-white">Total production volume for selected period</div>
+                        </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-cubes text-white text-lg"></i>
+                            </div>
+                            <div class="flex items-center space-x-1 text-xs">
+                                <i class="fas fa-arrow-up text-cyan-400"></i>
+                                <span class="text-cyan-400 font-semibold" id="volumeChange">+15.3%</span>
+                            </div>
+                        </div>
+                        <div class="text-3xl font-bold text-white mb-1" id="totalVolume">58.4</div>
+                        <div class="text-sm text-gray-400 mb-3" id="volumeLabel">Total tonnes</div>
+                        <div class="w-full bg-gray-700 rounded-full h-1.5">
+                            <div class="bg-gradient-to-r from-cyan-500 to-blue-400 h-1.5 rounded-full" id="volumeProgress" style="width: 85%"></div>
+                        </div>
+                        <div class="text-xs text-gray-500 mt-2" id="volumeTarget">Target: 65.0 tonnes</div>
+                    </div>
+                </div>
+
+                <!-- Production Pipeline and Analytics -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+                    <!-- Production Stages -->
+                    <div class="lg:col-span-2">
+                        <div class="glass-card rounded-xl p-6">
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-industry text-indigo-400 text-xl"></i>
+                                    <h3 class="text-xl font-semibold text-white">Production Pipeline</h3>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-green-400 rounded-full status-indicator"></div>
+                                    <span class="text-sm text-green-400">All Systems Operational</span>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                                <!-- Stage 1: Intake -->
+                                <div class="stage-card stage-active rounded-xl p-4" data-stage="intake">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-leaf text-white"></i>
+                                        </div>
+                                        <div class="w-2 h-2 bg-green-400 rounded-full status-indicator"></div>
+                                    </div>
+                                    <div class="text-sm font-semibold text-white mb-1">Fresh Intake</div>
+                                    <div class="text-2xl font-bold text-white" id="intakeRate">2.47</div>
+                                    <div class="text-xs text-gray-400">tonnes/hour</div>
+                                    <div class="mt-2 text-xs text-green-400">
+                                        <i class="fas fa-thermometer-half mr-1"></i>4°C optimal
+                                    </div>
+                                </div>
+
+                                <!-- Stage 2: Processing -->
+                                <div class="stage-card stage-active rounded-xl p-4" data-stage="processing">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-cogs text-white"></i>
+                                        </div>
+                                        <div class="w-2 h-2 bg-blue-400 rounded-full status-indicator"></div>
+                                    </div>
+                                    <div class="text-sm font-semibold text-white mb-1">AI Processing</div>
+                                    <div class="text-2xl font-bold text-white" id="processRate">89.3</div>
+                                    <div class="text-xs text-gray-400">% efficiency</div>
+                                    <div class="mt-2 text-xs text-blue-400">
+                                        <i class="fas fa-robot mr-1"></i>Vision active
+                                    </div>
+                                </div>
+
+                                <!-- Stage 3: Extraction -->
+                                <div class="stage-card stage-warning rounded-xl p-4" data-stage="extraction">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-flask text-white"></i>
+                                        </div>
+                                        <div class="w-2 h-2 bg-yellow-400 rounded-full status-indicator"></div>
+                                    </div>
+                                    <div class="text-sm font-semibold text-white mb-1">Extraction</div>
+                                    <div class="text-2xl font-bold text-white" id="extractYield">43.2</div>
+                                    <div class="text-xs text-gray-400">% yield rate</div>
+                                    <div class="mt-2 text-xs text-yellow-400">
+                                        <i class="fas fa-exclamation-triangle mr-1"></i>Optimizing
+                                    </div>
+                                </div>
+
+                                <!-- Stage 4: Packaging -->
+                                <div class="stage-card stage-active rounded-xl p-4" data-stage="packaging">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-box text-white"></i>
+                                        </div>
+                                        <div class="w-2 h-2 bg-green-400 rounded-full status-indicator"></div>
+                                    </div>
+                                    <div class="text-sm font-semibold text-white mb-1">Auto Package</div>
+                                    <div class="text-2xl font-bold text-white" id="packageRate">9.8K</div>
+                                    <div class="text-xs text-gray-400">units/hour</div>
+                                    <div class="mt-2 text-xs text-green-400">
+                                        <i class="fas fa-check-circle mr-1"></i>N₂ sealed
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Batch Progress -->
+                            <div class="border-t border-gray-700/30 pt-6">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center space-x-2">
+                                        <i class="fas fa-clock text-indigo-400"></i>
+                                        <span class="text-sm font-semibold text-white">Current Batch #2847</span>
+                                    </div>
+                                    <span class="text-sm text-gray-400" id="batchProgress">78% Complete</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2 mb-2">
+                                    <div class="progress-bar h-2 rounded-full" style="width: 78%"></div>
+                                </div>
+                                <div class="flex justify-between text-xs text-gray-500">
+                                    <span>Started 2h 15m ago</span>
+                                    <span>Est. 32min remaining</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Real-time Analytics -->
+                    <div class="space-y-6">
+                        <!-- Production Chart -->
+                        <div class="glass-card rounded-xl p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-lg font-semibold text-white">Hourly Output</h3>
+                                <i class="fas fa-chart-bar text-indigo-400"></i>
+                            </div>
+                            
+                            <div class="flex items-end justify-between h-32 space-x-1" id="productionChart">
+                                <!-- Chart bars generated by JavaScript -->
+                            </div>
+                            
+                            <div class="flex justify-between text-xs text-gray-500 mt-2">
+                                <span>8h ago</span>
+                                <span>4h ago</span>
+                                <span>Now</span>
+                            </div>
+                        </div>
+
+                        <!-- AI Insights -->
+                        <div class="ai-insight rounded-xl p-6">
+                            <div class="flex items-center space-x-2 mb-4">
+                                <i class="fas fa-brain text-purple-400"></i>
+                                <h3 class="text-lg font-semibold text-white">AI Insights</h3>
+                                <div class="w-2 h-2 bg-purple-400 rounded-full status-indicator"></div>
+                            </div>
+                            
+                            <div class="space-y-3">
+                                <div class="flex items-start space-x-3">
+                                    <i class="fas fa-lightbulb text-yellow-400 text-sm mt-1"></i>
+                                    <div>
+                                        <div class="text-sm text-white font-medium">Optimization Opportunity</div>
+                                        <div class="text-xs text-gray-400">Increase extraction temp by 2°C for +8% yield</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <i class="fas fa-chart-line text-green-400 text-sm mt-1"></i>
+                                    <div>
+                                        <div class="text-sm text-white font-medium">Demand Forecast</div>
+                                        <div class="text-xs text-gray-400">+15% demand expected next week</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <i class="fas fa-leaf text-emerald-400 text-sm mt-1"></i>
+                                    <div>
+                                        <div class="text-sm text-white font-medium">Sustainability</div>
+                                        <div class="text-xs text-gray-400">89% less CO₂ vs traditional sugar</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button class="w-full mt-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-2 px-4 rounded-lg text-sm font-medium hover:from-purple-700 hover:to-indigo-700 transition-all">
+                                Apply AI Recommendations
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Section: Activity Feed and Environmental Impact -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Activity Feed -->
+                    <div class="glass-card rounded-xl p-6">
+                        <div class="flex items-center space-x-3 mb-6">
+                            <i class="fas fa-history text-cyan-400 text-xl"></i>
+                            <h3 class="text-xl font-semibold text-white">System Activity</h3>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-medium text-white">Batch #2846 completed successfully</div>
+                                    <div class="text-xs text-gray-400">Quality grade: A+ | Yield: 43.7% | Mogroside V: 25.8%</div>
+                                    <div class="text-xs text-gray-500 mt-1">3 minutes ago</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-robot text-white text-xs"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-medium text-white">AI optimization applied</div>
+                                    <div class="text-xs text-gray-400">Extraction parameters adjusted for improved efficiency</div>
+                                    <div class="text-xs text-gray-500 mt-1">12 minutes ago</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-flask text-white text-xs"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-medium text-white">Quality control passed</div>
+                                    <div class="text-xs text-gray-400">All parameters within optimal range - HPLC verified</div>
+                                    <div class="text-xs text-gray-500 mt-1">28 minutes ago</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-exclamation-triangle text-white text-xs"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-medium text-white">Maintenance reminder</div>
+                                    <div class="text-xs text-gray-400">Extraction unit #3 scheduled for service in 2 days</div>
+                                    <div class="text-xs text-gray-500 mt-1">1 hour ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Environmental Impact -->
+                    <div class="glass-card rounded-xl p-6">
+                        <div class="flex items-center space-x-3 mb-6">
+                            <i class="fas fa-leaf text-green-400 text-xl"></i>
+                            <h3 class="text-xl font-semibold text-white">Environmental Impact</h3>
+                        </div>
+                        
+                        <div class="space-y-6">
+
+                            
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-tint text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-semibold text-white">Water Efficiency</div>
+                                        <div class="text-xs text-gray-400">consumption per kg produced</div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-2xl font-bold text-blue-400" id="waterUsage">2.1L</div>
+                                    <div class="text-xs text-gray-400">per kg</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-recycle text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-semibold text-white">Waste Reduction</div>
+                                        <div class="text-xs text-gray-400">circular economy approach</div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-2xl font-bold text-purple-400" id="wasteReduction">94%</div>
+                                    <div class="text-xs text-gray-400">waste eliminated</div>
+                                </div>
+                            </div>
+                            
+                            <div class="border-t border-gray-700/30 pt-4">
+                                <div class="text-center">
+                                    <div class="text-sm text-gray-400 mb-2">Sustainability Score</div>
+                                    <div class="text-3xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent glow-text">
+                                        A+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stage Detail Modal -->
+    <div id="stageModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden items-center justify-center z-50">
+        <div class="glass-card rounded-xl p-6 max-w-lg w-full mx-4">
+            <div class="flex items-center justify-between mb-6">
+                <h3 id="modalTitle" class="text-xl font-semibold text-white"></h3>
+                <button id="closeModal" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div id="modalContent" class="text-gray-300 leading-relaxed"></div>
+            <div class="mt-6 pt-4 border-t border-gray-700/30">
+                <button class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-2 px-4 rounded-lg font-medium hover:from-indigo-700 hover:to-purple-700 transition-all">
+                    View Detailed Analytics
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Enhanced stage information
+        const stageInfo = {
+            intake: {
+                title: "Fresh Harvest Intake System",
+                content: "Advanced intake system processing premium monk fruit at optimal 4°C storage temperature. AI-powered quality assessment ensures only the finest fruit enters production. Current throughput: 2.47 tonnes/hour with 98.7% freshness retention and automated sorting by ripeness level."
+            },
+            processing: {
+                title: "AI-Powered Processing Unit",
+                content: "State-of-the-art computer vision system with 89.3% efficiency rating. Multi-stage washing with UV sanitization and high-pressure cleaning ensures premium quality standards. Real-time defect detection and automatic rejection of substandard fruit."
+            },
+            extraction: {
+                title: "Mogroside Extraction Chamber",
+                content: "Triple water extraction process achieving 43.2% yield efficiency with temperature-controlled extraction preserving delicate mogroside compounds. Currently optimizing parameters for improved yield - AI recommendations suggest 2°C temperature increase."
+            },
+            packaging: {
+                title: "Automated Packaging System",
+                content: "High-speed packaging at 9,800 units/hour with nitrogen flushing for extended shelf life. Complete traceability with QR codes, batch tracking, and automated quality sealing. Zero-waste packaging with biodegradable materials."
+            }
+        };
+
+        // Modal functionality
+        const modal = document.getElementById('stageModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalContent = document.getElementById('modalContent');
+        const closeModal = document.getElementById('closeModal');
+
+        document.querySelectorAll('[data-stage]').forEach(stage => {
+            stage.addEventListener('click', () => {
+                const stageKey = stage.dataset.stage;
+                const info = stageInfo[stageKey];
+                modalTitle.textContent = info.title;
+                modalContent.textContent = info.content;
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        });
+
+        // Data ranges for different time periods
+        const dataRanges = {
+            '24h': {
+                totalOutput: { base: 2.47, variance: 0.15 },
+                efficiency: { base: 94.8, variance: 1.5 },
+                quality: { base: 25.7, variance: 0.3 },
+                totalVolume: { base: 58.4, variance: 2.1 },
+                volumeChange: '+15.3%',
+                volumeLabel: 'Total tonnes (24h)',
+                volumeTarget: 'Target: 65.0 tonnes',
+                todayOutput: 127.4,
+                waterUsage: 2.1,
+                wasteReduction: 94
+            },
+            '7d': {
+                totalOutput: { base: 2.31, variance: 0.12 },
+                efficiency: { base: 93.2, variance: 1.2 },
+                quality: { base: 25.4, variance: 0.4 },
+                totalVolume: { base: 387.6, variance: 15.3 },
+                volumeChange: '+8.7%',
+                volumeLabel: 'Total tonnes (7d)',
+                volumeTarget: 'Target: 420.0 tonnes',
+                todayOutput: 892.3,
+                waterUsage: 2.3,
+                wasteReduction: 92
+            },
+            '30d': {
+                totalOutput: { base: 2.28, variance: 0.18 },
+                efficiency: { base: 92.1, variance: 2.1 },
+                quality: { base: 25.1, variance: 0.6 },
+                totalVolume: { base: 1642.8, variance: 67.2 },
+                volumeChange: '+12.4%',
+                volumeLabel: 'Total tonnes (30d)',
+                volumeTarget: 'Target: 1800.0 tonnes',
+                todayOutput: 3847.2,
+                waterUsage: 2.4,
+                wasteReduction: 91
+            },
+            '90d': {
+                totalOutput: { base: 2.19, variance: 0.21 },
+                efficiency: { base: 91.3, variance: 2.8 },
+                quality: { base: 24.8, variance: 0.8 },
+                totalVolume: { base: 4926.3, variance: 201.4 },
+                volumeChange: '+18.9%',
+                volumeLabel: 'Total tonnes (90d)',
+                volumeTarget: 'Target: 5400.0 tonnes',
+                todayOutput: 11542.7,
+                waterUsage: 2.6,
+                wasteReduction: 89
+            }
+        };
+
+        let currentRange = '24h';
+
+        // Enhanced real-time data updates
+        function updateData() {
+            const now = new Date();
+            document.getElementById('currentTime').textContent = now.toLocaleTimeString();
+
+            const range = dataRanges[currentRange];
+
+            // Update main metrics with realistic variations
+            const totalOutput = document.getElementById('totalOutput');
+            const newValue = Math.max(range.totalOutput.base - 0.3, Math.min(range.totalOutput.base + 0.3, 
+                range.totalOutput.base + (Math.random() - 0.5) * range.totalOutput.variance));
+            totalOutput.textContent = newValue.toFixed(2);
+            totalOutput.classList.add('data-update');
+            setTimeout(() => totalOutput.classList.remove('data-update'), 800);
+
+            // Update efficiency
+            const efficiency = document.getElementById('efficiency');
+            const effValue = Math.max(range.efficiency.base - 2, Math.min(range.efficiency.base + 2, 
+                range.efficiency.base + (Math.random() - 0.5) * range.efficiency.variance));
+            efficiency.textContent = effValue.toFixed(1) + '%';
+            document.getElementById('sidebarEfficiency').textContent = effValue.toFixed(1) + '%';
+
+            // Update quality
+            const quality = document.getElementById('quality');
+            const qualValue = Math.max(range.quality.base - 1, Math.min(range.quality.base + 1, 
+                range.quality.base + (Math.random() - 0.5) * range.quality.variance));
+            quality.textContent = qualValue.toFixed(1) + '%';
+
+            // Update total volume
+            const totalVolume = document.getElementById('totalVolume');
+            const volumeValue = Math.max(range.totalVolume.base - 5, Math.min(range.totalVolume.base + 5, 
+                range.totalVolume.base + (Math.random() - 0.5) * range.totalVolume.variance));
+            totalVolume.textContent = volumeValue.toFixed(1);
+            document.getElementById('sidebarVolume').textContent = volumeValue.toFixed(1) + 't';
+
+            // Update stage metrics
+            document.getElementById('intakeRate').textContent = newValue.toFixed(2);
+            document.getElementById('processRate').textContent = (87 + Math.random() * 5).toFixed(1);
+            document.getElementById('extractYield').textContent = (41 + Math.random() * 4).toFixed(1);
+            document.getElementById('packageRate').textContent = (9.5 + Math.random() * 0.6).toFixed(1) + 'K';
+
+            // Update today's output
+            const todayOutput = document.getElementById('todayOutput');
+            const todayValue = range.todayOutput + (Math.random() - 0.5) * (range.todayOutput * 0.05);
+            todayOutput.textContent = todayValue.toFixed(1) + ' kg';
+
+            // Update environmental metrics
+            document.getElementById('waterUsage').textContent = (range.waterUsage + Math.random() * 0.25).toFixed(1) + 'L';
+            document.getElementById('wasteReduction').textContent = Math.floor(range.wasteReduction + Math.random() * 3) + '%';
+
+            // Update batch progress
+            const batchProgress = document.getElementById('batchProgress');
+            const currentProgress = parseInt(batchProgress.textContent.replace('% Complete', ''));
+            const newProgress = Math.min(100, currentProgress + Math.floor(Math.random() * 2));
+            batchProgress.textContent = newProgress + '% Complete';
+            document.querySelector('.progress-bar').style.width = newProgress + '%';
+        }
+
+        // Update data based on selected date range
+        function updateDateRange(range) {
+            currentRange = range;
+            const data = dataRanges[range];
+            
+            // Update static elements that change with date range
+            document.getElementById('volumeChange').textContent = data.volumeChange;
+            document.getElementById('volumeLabel').textContent = data.volumeLabel;
+            document.getElementById('volumeTarget').textContent = data.volumeTarget;
+            
+            // Update progress bar width based on volume vs target
+            const volumeProgress = document.getElementById('volumeProgress');
+            const targetValue = parseFloat(data.volumeTarget.split(': ')[1].replace(' tonnes', ''));
+            const progressPercent = Math.min(100, (data.totalVolume.base / targetValue) * 100);
+            volumeProgress.style.width = progressPercent + '%';
+            
+            // Trigger immediate data update
+            updateData();
+            
+            // Update chart for new time range
+            updateChart();
+        }
+
+        // Generate enhanced production chart
+        function updateChart() {
+            const chart = document.getElementById('productionChart');
+            chart.innerHTML = '';
+            
+            const hours = 16;
+            for (let i = 0; i < hours; i++) {
+                const height = Math.floor(30 + Math.random() * 70);
+                const bar = document.createElement('div');
+                bar.className = 'chart-bar rounded-t-lg flex-1';
+                bar.style.height = height + '%';
+                bar.addEventListener('click', () => {
+                    const value = (2.0 + Math.random() * 0.8).toFixed(2);
+                    alert(`Hour ${i + 1}: ${value} tonnes produced\nEfficiency: ${(88 + Math.random() * 8).toFixed(1)}%\nQuality: Grade A+`);
+                });
+                chart.appendChild(bar);
+            }
+        }
+
+        // Date range dropdown functionality
+        document.getElementById('dateRange').addEventListener('change', (e) => {
+            updateDateRange(e.target.value);
+        });
+
+        // Initialize
+        updateData();
+        updateChart();
+
+        // Update intervals
+        setInterval(updateData, 2500);
+        setInterval(updateChart, 25000);
+
+        // Navigation functionality
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+
+        // AI Recommendations button
+        document.querySelector('.ai-insight button').addEventListener('click', () => {
+            alert('🤖 AI Optimization Applied!\n\n✓ Extraction temperature increased by 2°C\n✓ Processing speed optimized\n✓ Estimated +8% yield improvement\n\nChanges will take effect in next batch cycle.');
+            
+            // Simulate improvement
+            setTimeout(() => {
+                document.getElementById('extractYield').textContent = (parseFloat(document.getElementById('extractYield').textContent) + 3.2).toFixed(1);
+                document.getElementById('efficiency').textContent = (parseFloat(document.getElementById('efficiency').textContent.replace('%', '')) + 1.5).toFixed(1) + '%';
+            }, 2000);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'960bc98461a64333',t:'MTc1Mjc3Njc4MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
     </section>
 
     <!-- The Problem Section -->
