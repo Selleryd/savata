@@ -2064,10 +2064,14 @@
         });
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9603f90c47c30fa4',t:'MTc1MjY5NDg0Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-<footer class="text-center text-xs text-white py-4 border-t border-gray-700 bg-black mt-12">
+<footer style="background: #000; color: #fff; text-align: center; padding: 10px 0; font-size: 14px;" class="mb-0 pb-0">
   <script>
-    document.write(`© ${new Date().getFullYear()} Savata Systems. Made with ❤️ in the USA. Eat and be satisfied.`);
+    document.addEventListener('DOMContentLoaded', function () {
+      const year = new Date().getFullYear();
+      document.getElementById('footer-text').innerHTML = `&copy; ${year} Savata Systems • Made with ❤️ in the USA • Eat and Be Satisfied.`;
+    });
   </script>
+  <div id="footer-text"></div>
 </footer>
     <script>
   // Function: Real-time Clock
@@ -2087,5 +2091,4 @@
     <div class="chart-bar w-3 rounded-t" style="height: ${height}%"></div>
   `).join('');
 </script>
-
 </html>
