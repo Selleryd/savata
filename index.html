@@ -1852,6 +1852,7 @@
                     <button class="neon-glow bg-green-500 text-white px-12 py-6 text-2xl font-bold rounded-full hover:bg-green-400 transition-all transform hover:scale-105">
                         <i class="fas fa-dollar-sign mr-2"></i>Invest via SAFE Now
                     </button>
+                        <a href="https://docs.google.com/document/d/e/2PACX-1vSff430FkOU0-ICafx5b507e8S4NIZbI0nCdoDgChfALlQupLLu4fCUMNeScmZPuLCocRzzhu1OYE6H/pub" target="_blank" rel="noopener noreferrer"
                     <button class="glass-card text-white px-12 py-6 text-xl font-semibold rounded-full hover:bg-white/10 transition-all">
                         <i class="fas fa-envelope mr-2"></i>Request Information
                     </button>
@@ -2074,19 +2075,21 @@
   <div id="footer-text"></div>
 </footer>
   <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Chart generation for AI Dashboard
-    const chartContainer = document.getElementById('productionChart');
-    if (chartContainer) {
-      chartContainer.innerHTML = ''; // Clear any previous content
+  // Wait for the DOM to be fully loaded
+  document.addEventListener("DOMContentLoaded", function () {
+    const chartContainer = document.getElementById("productionChart");
 
-      const dataPoints = [20, 40, 60, 50, 80, 30, 70, 90]; // Example data
-      dataPoints.forEach(height => {
-        const bar = document.createElement('div');
-        bar.className = 'w-4 chart-bar';
-        bar.style.height = `${height}%`;
+    if (chartContainer) {
+      const dataPoints = [5, 10, 7, 12, 8, 6, 9, 11, 4, 13, 6, 10]; // Adjust these values as needed
+
+      dataPoints.forEach(value => {
+        const bar = document.createElement("div");
+        bar.className = "chart-bar w-2 rounded bg-indigo-500";
+        bar.style.height = `${value * 8}px`; // Scale height visually
         chartContainer.appendChild(bar);
       });
+    } else {
+      console.warn("productionChart element not found.");
     }
   });
 </script>
